@@ -2,11 +2,29 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Among Us — Space Crew</title>
+<meta name="theme-color" content="#07111d"><title>Space Crew — Among Us Fan Game</title>
 <link rel="stylesheet" href="style.css">
-</head><body>
+</head>
+<body>
+<main id="game-shell">
 <canvas id="game" aria-label="Jogo Space Crew"></canvas>
-<div id="hud"><div id="taskbox"><strong>TAREFAS DA TRIPULAÇÃO</strong><div id="progress"><div id="bar"></div></div><div id="tasks"></div></div><div id="status">SPACE CREW • Preparando nave…</div><div id="stick"><div id="nub"></div></div><div id="mobilehint">Use WASD / setas para andar</div><div id="actions"><button id="use">USAR</button><button id="report">REPORTAR</button><button id="mapbtn">MAPA</button></div></div>
-<div id="overlay"><div id="card"><h1>SPACE CREW</h1><p>Encontre o impostor, complete as tarefas e sobreviva a bordo da nave.</p><div id="colors"></div><button id="start" style="background:#168b76">INICIAR PARTIDA</button><p style="font-size:12px">Movimento: WASD ou setas • E: usar • R: reunião<br>Funciona no computador e no celular.</p></div></div>
-<div id="dialog"><div class="panel" id="dialogContent"></div></div>
-<script src="game.js" defer></script></body></html>
+<section id="hud" aria-live="polite">
+  <div id="taskbox"><strong>TAREFAS</strong><div id="progress"><div id="bar"></div></div><div id="tasks"></div></div>
+  <div id="status">SPACE CREW • pronto para iniciar</div>
+  <div id="stick" aria-label="Controle de movimento"><div id="nub"></div></div>
+  <div id="mobilehint">WASD / setas para mover</div>
+  <nav id="actions"><button id="use">USAR</button><button id="report">REUNIÃO</button><button id="mapbtn">MAPA</button></nav>
+</section>
+<section id="overlay" class="overlay">
+  <div class="card">
+    <div class="eyebrow">MISSÃO ESPACIAL</div><h1>SPACE <span>CREW</span></h1>
+    <p>Complete as tarefas, observe os outros tripulantes e descubra quem está sabotando a nave.</p>
+    <div id="colors" aria-label="Escolha a cor do personagem"></div>
+    <button id="start" class="primary">INICIAR PARTIDA</button>
+    <p class="help">Mover: WASD / setas · Usar: E · Reunião: R · Mapa: M</p>
+  </div>
+</section>
+<section id="dialog" class="overlay hidden"><div class="card" id="dialogContent"></div></section>
+</main>
+<script src="game.js" defer></script>
+</body></html>
